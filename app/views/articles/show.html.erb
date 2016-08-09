@@ -1,0 +1,21 @@
+<div class="text-center">
+
+  <h1><b>Wikinimous</b></h1>
+  <br>
+
+  <h2 style="color: blue;"><%= @article.title %>  
+
+    <%= link_to edit_article_path(@article) do %>
+    <%= fa_icon "pencil" %>
+      <% end  %>
+
+    <%= link_to article_path(@article),
+      method: :delete,
+      data: { confirm: "Are you sure?" } do %>
+      <%= fa_icon "trash" %>
+      <% end %>
+  </h2>
+      <p><%= @article.content %></p>
+      <br>
+      <%= link_to "View all articles", articles_path %>
+</div>
